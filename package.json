@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "个人博客",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cc-spec/blog.git"
+  },
+  "author": "cc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cc-spec/blog/issues"
+  },
+  "homepage": "https://github.com/cc-spec/blog#readme",
+  "devDependencies": {
+    "vuepress": "^1.8.2",
+    "vuepress-theme-reco": "^1.6.10"
+  }
+}
