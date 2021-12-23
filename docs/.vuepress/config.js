@@ -31,6 +31,13 @@ module.exports = {
         ]
       },
       {
+        title: 'CSS',
+        path: '/css/flex',
+        children: [
+          { title: 'flex布局', path: '/css/flex' }
+        ]
+      },
+      {
         title: 'JS',
         path: '/js/Scope',
         children: [
