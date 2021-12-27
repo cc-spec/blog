@@ -10,6 +10,13 @@ module.exports = {
       lang: 'zh-CN' // 语言
     }
   },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'assets': '../../assets'
+      }
+    }
+  },
   themeConfig: {// 开启侧边栏
     nav: [
       { text: '首页', link: '/' },
@@ -55,14 +62,12 @@ module.exports = {
       },
       {
         title: '组件库',
-        path: '/componentLibrary/elementui/form',
         children: [
           { 
-            title: 'elementui', path: '/componentLibrary/elementui/form',
-            collapsable: false,
+            title: 'elementui', path: '/componentLibrary/elementui/table/combineRow',
             children: [
-              { title: 'form', path: '/componentLibrary/elementui/form' },
-              { title: 'table', path: '/componentLibrary/elementui/table' }
+              // { title: 'form', path: '/componentLibrary/elementui/form' },
+              { title: 'table', path: '/componentLibrary/elementui/table/combineRow' }
             ]
           }
         ]
