@@ -33,6 +33,35 @@ date: '2021-12-27'
         - 不合并
           - rowspan: 0
           - colspan: 0
+## 3. 代码
+```javascript
+// 记录
+this.tableData.forEach((item, index) => {
+  !this.o[item.expressCompany] ? this.o[item.expressCompany] = { count: 1, startIndex: index } : this.o[item.expressCompany].count++
+})
+// 合并
+bodyCellSpan({row, column, rowIndex}) {
+  for (let key in this.o) {
+    if (column.field === 'expressCompany') { // 列名===要合并的列名
+      if (row.expressCompany === key) {  // 行的值===要被合并的值
+        if (rowIndex === this.o[key].startIndex) { // 合并行的index===从哪里开始有相同的数据
+          return {
+            rowspan: this.o[key].count, // 合并几行
+            colspan: 1 // 合并几列
+          }
+        }
+        else {
+          return {
+            rowspan: 0,
+            colspan: 0
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 # 二、最终版
 ## 1. 定义一个数组arr
 - 遍历tabledata（reduce或其他方法均可）
@@ -48,3 +77,34 @@ date: '2021-12-27'
 - `if`: 列名===要被合并的列名 **哪一列**
   - 定义常量_row保存合并几行: arr[rowIndex]
   - 定义常量_col保存合并几列: 如果_row>0说明该列没重复→原样，否则该列重复→消失
+## 3. 代码
+```javascript
+// 记录
+// 出现多少次，就合并成多少行
+let pos = 0 // 初始化变量用来保存某一行出现多少次
+this.tableData.reduce((prev, curr, index) => {
+  if (curr.name === prev.name) { // 当前的===上一个说明重复
+    // 重复的标志为0
+    this.arr.push(0)
+    // 重复多少次指针加多少1
+    this.arr[pos] += 1
+  } else {
+    // 不重复的标志为1
+    this.arr.push(1)
+    // 指针指向第一次出现的数据
+    pos = index
+  }
+  return curr
+}, {})
+// 合并
+bodyCellSpan({row, column, rowIndex}) {
+  if (column.field === 'name') { // 哪一列要合并
+    const _row = this.arr[rowIndex]; // 合并成几行
+    const _col = _row > 0 ? 1 : 0; // 合并成几列
+    return {
+      rowspan: _row,
+      colspan: _col
+    };
+  }
+}
+```
