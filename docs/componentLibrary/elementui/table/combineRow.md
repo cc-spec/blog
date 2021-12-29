@@ -14,6 +14,7 @@ date: '2021-12-27'
   {name: 'b', value: 4}
 ]
 ```
+> 本方法适用于**vue-easytable**，可通过相同思路改造实现elementui中的功能
 
 # 一、基础版
 ## 1. 定义一个对象obj

@@ -3,6 +3,20 @@ title: table展开行
 author: cc
 date: '2021-12-29'
 ---
+
+# 一、设置表格只能展开一行
+## 1. 监听表格某行展开按钮被点击（展开或关闭）
+- 监听`expand-change`事件，该事件接收三个参数`row, (expandedRows | expanded)`
+## 2. 展开该行
+- 判断当前行是否展开，也就是第二个参数中有没有当前行
+- 有就结束
+- 没有就**干掉其他人，留下我自己**
+## 3. 关闭其他行
+- 遍历每一行
+  - 通过toggleAllSelection事件全部关闭
+  - 通过toggleRowExpansion事件打开选中行
+
+## 3. 代码
 ```JavaScript
 @expand-change="expandChange"
 
