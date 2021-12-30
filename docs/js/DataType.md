@@ -50,11 +50,14 @@ date: '2021-12-19'
         - 同parseInt，返回的结果为浮点数
 - **任意类型→String**
     - **string类型特点**：不可变→字符串一旦创建，值就不能再改变，要改变某个变量储存的字符串，就需要销毁原来的，然后重新申请变量保存。
-    - **变量.toString([进制])**
+    - **变量.toString([进制])/变量.toLocaleString**
         - null和undefined没有toString方法
     - **String(变量)**
         - 使用场景：需要转换，但不知道变量是否为null或undefined的情况
         - 规则：如果有toString()方法，就调用toString方法；如果是null或undefined，就返回null或undefined。
+    - **join()将数组或类数组转换成字符串**
+        - join() 以英文逗号分隔
+        - join('') 无分隔
 ### 5. 复杂数据类型转换
 - **原始类型转对象**
     - 通过**new String()**、**new Number()** 或者**new Boolean()** 等构造函数，转换为它们各自的包装对象。

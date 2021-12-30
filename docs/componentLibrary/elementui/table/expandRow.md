@@ -13,7 +13,6 @@ date: '2021-12-29'
 - 没有就**干掉其他人，留下我自己**
 ## 3. 关闭其他行
 - 遍历每一行
-  - 通过toggleAllSelection事件全部关闭
   - 通过toggleRowExpansion事件打开选中行
 
 ## 3. 代码
@@ -25,8 +24,8 @@ expandChange(row, expandedRows) {
   if (!expandedRows.find(item => item.id === row.id)) return
   // 展开当前行需要将其他行关闭，保证每次都打开一行
   expandedRows.length && expandedRows.forEach(item => {
-    if (row.id !== item.id) {
-      this.$refs.table.toggleRowExpansion(item, false)
+    if (row.id === item.id) {
+      this.$refs.table.toggleRowExpansion(item, true)
     }
   })
 },
