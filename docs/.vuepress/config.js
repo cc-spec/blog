@@ -48,9 +48,9 @@ module.exports = {
         title: 'JS',
         path: '/js/Scope',
         children: [
-          { title: '作用域', path: '/js/Scope' },
-          { title: '闭包', path: '/js/Closure' },
-          { title: '数据', path: '/js/DataType' },
+          { title: '作用域', path: '/js/scope' },
+          { title: '闭包', path: '/js/closure' },
+          { title: '数据', path: '/js/dataType' },
         ]
       },
       {
