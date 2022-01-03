@@ -50,6 +50,8 @@ module.exports = {
         children: [
           { title: '作用域', path: '/js/scope' },
           { title: '闭包', path: '/js/closure' },
+          { title: '原型和原型链', path: '/js/prototype' },
+          { title: 'this', path: '/js/this' },
           { title: '数据', path: '/js/dataType' },
         ]
       },
