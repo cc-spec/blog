@@ -20,7 +20,8 @@
   "homepage": "https://github.com/cc-spec/blog#readme",
   "devDependencies": {
     "vuepress": "^1.8.2",
-    "vuepress-theme-reco": "^1.6.10"
+    "vuepress-theme-reco": "^1.6.10",
+    "vuepress-theme-vdoing": "^1.9.0"
   },
   "dependencies": {
     "markdown-it": "^12.3.0"

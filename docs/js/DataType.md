@@ -1,16 +1,22 @@
 ---
 title: 数据类型
-author: cc
-date: '2021-12-19'
+author: coderc
+date: 2021-12-19
+permalink: /pages/0fac71/
+categories: 
+  - js
+tags: 
+  - 
 ---
 
-## 1. 简单数据类型
+## 一、数据类型分类
+### 1. 简单数据类型
 - **`number、string、boolean、null、undefined、symbol、bigInt`**
-## 2. 复杂数据类型
+### 2. 复杂数据类型
 - **`object`**
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ba0a18985135454fae55e9134b7f28ee~tplv-k3u1fbpfcp-watermark.image)
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dfbbe072dcfc47f681380103b1c9357e~tplv-k3u1fbpfcp-watermark.image)
-## 3. 简单数据类型和复杂数据类型的区别
+### 3. 简单数据类型和复杂数据类型的区别
 - **存储机制不同**
 	- 简单数据类型存储在栈中；
     - 复杂数据类型存储在堆中，栈中存储的时引用地址，指向堆。
@@ -20,7 +26,8 @@ date: '2021-12-19'
 - **变量复制不同**
 	- 简单数据类型复制的是原变量的一个副本，两个不会相互影响；
     - 复杂数据类型复制的是引用地址，指向堆中同一个对象，一个变化另一个也会变化。
-### 4. 简单数据类型转换
+## 二、数据类型转换
+### 1. 简单数据类型转换
 - **任意类型→Boolean**
     - Boolean(变量)
     - '0'→true
@@ -58,13 +65,13 @@ date: '2021-12-19'
     - **join()将数组或类数组转换成字符串**
         - join() 以英文逗号分隔
         - join('') 无分隔
-### 5. 复杂数据类型转换
+### 2. 复杂数据类型转换
 - **原始类型转对象**
     - 通过**new String()**、**new Number()** 或者**new Boolean()** 等构造函数，转换为它们各自的包装对象。
 - **对象转字符串或数字**
     - **ToPrimitive(input[, PreferredType])**
     ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c4223e053bdb4e468ff90bfc4a19b5ba~tplv-k3u1fbpfcp-watermark.image?)
-# 数据类型判断（主要为不同的Object类型的判断）
+## 三、数据类型判断（主要为不同的Object类型的判断）
 ### 1. 基本数据类型
 - **`typeof操作符`**
 除null之外其余基本数据类型都可以正确返回，null返回object  
@@ -72,8 +79,12 @@ date: '2021-12-19'
 ### 2. 复杂数据类型
 - **`instanceof操作符`**   
     - 单一的全局环境下可以正确检测，如果存在两个版本以上的Array构造函数，则无法正确检测
-           ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6bb98e8c4b934ae3ad0e08fe9e4d6b87~tplv-k3u1fbpfcp-watermark.image)
-           ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/583d3cd7278e4f588107a2552aa04089~tplv-k3u1fbpfcp-watermark.image)
+```JavaScript
+let arr = []
+console.log(arr instanceof Array)
+console.log({} instanceof Array)
+```
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/583d3cd7278e4f588107a2552aa04089~tplv-k3u1fbpfcp-watermark.image)
 - **`Object.prototype.toString.call(检测对象) == '[Object Array]'`**
     - **调用toString方法时，会执行以下步骤：**
         - (1) 如果 this 值是 undefined，就返回 [object Undefined]
@@ -81,11 +92,31 @@ date: '2021-12-19'
         - (3) 让 Object 成为 ToObject(this) 的结果
         - (4) 让 class 成为 Object 的内部属性 [[Class]] 的值
         - (5) 最后返回由 **"[object " 和 class 和 "]"** 三个部分组成的字符串
-    ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a54b7d5e673b43eeabee3ba94425a2c8~tplv-k3u1fbpfcp-watermark.image)
-    ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3fd1c4151dec4109ada550ba52ed8ddd~tplv-k3u1fbpfcp-watermark.image)
+```JavaScript
+let arr = []
+console.log(Object.prototype.toString.call(arr))
+let obj = {}
+console.log(Object.prototype.toString.call(obj))
+let str = ''
+console.log(Object.prototype.toString.call(str))
+```
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3fd1c4151dec4109ada550ba52ed8ddd~tplv-k3u1fbpfcp-watermark.image)
 - **`constructor`**
-    ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a124d253acb94b96b9a1b870e871ab7e~tplv-k3u1fbpfcp-watermark.image)
-    ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d43c940608b2405597eccae9a02cdbfb~tplv-k3u1fbpfcp-watermark.image)
+```JavaScript
+let arr = []
+console.log(arr.constructor)
+console.log({}.constructor)
+
+arr.constructor = Object
+console.log(arr.constructor)
+```
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d43c940608b2405597eccae9a02cdbfb~tplv-k3u1fbpfcp-watermark.image)
 - **`Array.isArray(检测对象)`**
-    ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8570521ee6784208ac2d53e537d8da42~tplv-k3u1fbpfcp-watermark.image)
-    ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2286918b95c342148aa10001214165e8~tplv-k3u1fbpfcp-watermark.image)
+```JavaScript
+let arr = []
+console.log(Array.isArray(arr))
+
+let obj = {}
+console.log(Array.isArray(obj))
+```
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2286918b95c342148aa10001214165e8~tplv-k3u1fbpfcp-watermark.image)

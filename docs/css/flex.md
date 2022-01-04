@@ -1,7 +1,12 @@
 ---
 title: flex布局
 author: cc
-date: '2021-12-23'
+date: 2021-12-23
+permalink: /pages/172fea/
+categories: 
+  - css
+tags: 
+  - 
 ---
 
 # flex布局之子项的**flex**属性

@@ -1,7 +1,14 @@
 ---
 title: form表单校验
 author: cc
-date: '2021-12-30'
+date: 2021-12-30
+permalink: /pages/541cad/
+categories: 
+  - componentLibrary
+  - elementui
+  - form
+tags: 
+  - 
 ---
 
 # 一、整体校验
