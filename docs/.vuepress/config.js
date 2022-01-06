@@ -4,7 +4,8 @@ module.exports = {
   theme: 'vdoing',
   themeConfig: {
     subSidebar: 'structuring',
-    sidebarDepth: 3
+    sidebarDepth: 3,
+    // logo: ''
   },
   locales: {
     '/': {
@@ -21,6 +22,16 @@ module.exports = {
   themeConfig: {// 开启侧边栏
     nav: [
       { text: '首页', link: '/' },
+      { text: 'css', link: '/css/' },
+      { text: 'js', 
+        items: [
+          { text: '基础', link: '/js/'},
+          { text: 'es6', link: '/js/' }
+        ]
+      },
+      { text: 'Vue', link: '/vue/' },
+      { text: '组件库', link: '/componentLibrary/' },
+      { text: '阅读', link: '/reading/' },
       {
         text: 'cc的前端博客',
         items: [
@@ -29,70 +40,52 @@ module.exports = {
         ]
       }
     ],
-    sidebar: [
-      {
-        title: '欢迎',
-        path: '/',
-        collapsable: false,
-        children: [
-          { title: '学习前必看', path: '/' }
-        ]
-      },
-      {
-        title: 'CSS',
-        path: '/css/flex',
-        children: [
-          { title: 'flex布局', path: '/css/flex' },
-          { title: '三栏自适应布局', path: '/css/三栏自适应布局' },
-        ]
-      },
-      {
-        title: 'JS',
-        path: '/js/Scope',
-        children: [
-          { title: '作用域', path: '/js/scope' },
-          { title: '闭包', path: '/js/closure' },
-          { title: '模块化', path: '/js/module' },
-          { title: 'this', path: '/js/this' },
-          { title: 'call、apply、bind', path: '/js/call&apply&bind' },
-          { title: '原型和原型链', path: '/js/prototype' },
-          // { title: 'class', path: '/js/class' },
-          // { title: '继承', path: '/js/inherit' },
-          { title: '数据', path: '/js/dataType' },
-        ]
-      },
-      {
-        title: 'Vue',
-        path: '/vue/start',
-        children: [
-          { title: '初识Vue', path: '/vue/start' },
-        ]
-      },
-      {
-        title: '组件库',
-        children: [
-          { 
-            title: 'elementui', path: '/componentLibrary/elementui/table/combineRow',
-            children: [
-              { 
-                title: 'table',
-                path: '/componentLibrary/elementui/table/combineRow',
-                children: [
-                  {title: 'table合并行', path: '/componentLibrary/elementui/table/combineRow'},
-                  {title: 'table只展开一行', path: '/componentLibrary/elementui/table/expandRow'},
-                ]
-              },
-            ]
-          }
-        ]
-      },
-      {
-        title: '阅读',
-        path: '/reading/图解HTTP',
-        children: [
-          { title: '图解HTTP', path: '/reading/图解HTTP' },
-        ]
-      },
-    ]
+    sidebar: {
+      '/css/': [
+        {
+          title: '布局',
+          children: [
+            ['flex', 'flex布局'],
+            ['三栏自适应布局.md', '三栏自适应布局']
+          ]
+        }
+      ],
+      '/js/': [
+        {
+          title: '基础知识',
+          children: [
+            ['scope', '作用域'],
+            ['closure', '闭包'],
+            ['module', '模块化'],
+            ['this', 'this'],
+            ['call&apply&bind', 'call、apply、bind'],
+            ['prototype', '原型和原型链'],
+            // ['inherit', '继承'],
+            ['dataType', '数据'],
+            ['防抖节流.md', '防抖节流'],
+          ]
+        },
+        {
+          title: 'es6',
+          children: [
+            ['class', 'class'],
+          ]
+        }
+      ],
+      '/vue/': [
+        {
+          title: 'vue理论知识',
+          children: []
+        }
+      ],
+      '/reading/': [
+        {
+          title: '网络',
+          children: [
+            ['图解HTTP.md', '图解HTTP']
+          ]
+        }
+      ]
+    }
   },
 }

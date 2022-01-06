@@ -25,6 +25,7 @@ tags:
 - call和apply
   - call：参数按次序传入
   - apply：参数必须是一个数组/类数组
+  - 由于apply还要对参数进行判断，所以性能比call差一些
 - call，apply 和 bind
   - call和apply会调用函数
   - bind只是创造了这个函数的副本，并且不会调用
