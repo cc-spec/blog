@@ -32,6 +32,7 @@ module.exports = {
       { text: 'Vue', link: '/vue/' },
       { text: '组件库', link: '/componentLibrary/' },
       { text: '阅读', link: '/reading/' },
+      { text: '其他', link: '/other/' },
       {
         text: 'cc的前端博客',
         items: [
@@ -84,6 +85,18 @@ module.exports = {
           children: [
             ['图解HTTP.md', '图解HTTP']
           ]
+        }
+      ],
+      '/other/': [
+        {
+          title: 'git',
+          children: [
+            ['git', 'git']
+          ]
+        },
+        {
+          title: '算法',
+          children: []
         }
       ]
     }

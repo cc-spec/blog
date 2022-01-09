@@ -7,3 +7,5 @@ categories:
 tags:
   - 
 ---
+
+# js基础、DOM、BOM、es6
