@@ -23,7 +23,7 @@ module.exports = {
     nav: [
       { text: '首页', link: '/' },
       { text: 'css', link: '/css/' },
-      { text: 'js', 
+      { text: 'js',
         items: [
           { text: '基础', link: '/js/'},
           { text: 'es6', link: '/js/' }
@@ -57,13 +57,13 @@ module.exports = {
           children: [
             ['scope', '作用域'],
             ['closure', '闭包'],
-            ['module', '模块化'],
+            ['module.md', '模块化'],
             ['this', 'this'],
             ['call&apply&bind', 'call、apply、bind'],
             ['prototype', '原型和原型链'],
             // ['inherit', '继承'],
             ['dataType', '数据'],
-            ['防抖节流.md', '防抖节流'],
+            ['防抖节流', '防抖节流'],
           ]
         },
         {

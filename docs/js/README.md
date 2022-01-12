@@ -8,4 +8,4 @@ tags:
   - 
 ---
 
-# js基础、DOM、BOM、es6
+## js基础、DOM、BOM、es6
