@@ -54,13 +54,13 @@ tags:
     - 导出：`export { d as moduleD }`
     - 导入：`import { e as moduleE } from '文件路径'`
 ### 6. 比较
-- CommonJS与AMD
+- **CommonJS与AMD**
   - 同
     - 运行时加载
   - 异
     - CommonJS是服务器端模块化规范，AMD是浏览器端模块化规范
     - CommonJS同步加载代码，AMD异步加载代码
-- CommonJS与ES6 module
+- **CommonJS与ES6 module**
   - 异
     - CommonJS运行时加载，ES6 module编译时加载（import() 运行时加载）
 ## 二、模块化打包工具

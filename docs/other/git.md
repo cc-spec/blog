@@ -16,3 +16,12 @@ git rm -r -cached . // 清除本地当前缓存
 git add . // 重新添加到暂存区
 git commit -m '更新' // 重新提交
 ```
+## 二、git pull 和 git fetch 的区别
+- ![image.png](./git.png)
+- git pull：从远程获取最新版本并merge到本地
+- git fetch：从远程获取最新版本但是不自动merge
+
+## 三、git stash保存暂存区，切换到另一个分支后出现冲突
+- 创建一个新的分支`git checkout -b newBranch`
+- 将当前未提交到本地（和服务器）的代码推入到Git的栈中`git stash`
+- 清空Git栈`git stash clear`
