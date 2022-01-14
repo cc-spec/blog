@@ -20,13 +20,14 @@ module.exports = {
     }
   },
   themeConfig: {// 开启侧边栏
+    logo: '', // 图标
     nav: [
       { text: '首页', link: '/' },
       { text: 'css', link: '/css/' },
       { text: 'js',
         items: [
-          { text: '基础', link: '/js/'},
-          { text: 'es6', link: '/js/' }
+          { text: '基础', link: '/js/basic/'},
+          { text: 'es6', link: '/js/es6/' }
         ]
       },
       { text: 'Vue', link: '/vue/' },
@@ -55,21 +56,21 @@ module.exports = {
         {
           title: '基础知识',
           children: [
-            ['scope', '作用域'],
-            ['closure', '闭包'],
-            ['module.md', '模块化'],
-            ['this', 'this'],
-            ['call&apply&bind', 'call、apply、bind'],
-            ['prototype', '原型和原型链'],
+            ['basic/scope', '作用域'],
+            ['basic/closure', '闭包'],
+            ['basic/module', '模块化'],
+            ['basic/this', 'this'],
+            ['basic/call&apply&bind', 'call、apply、bind'],
+            ['basic/prototype', '原型和原型链'],
             // ['inherit', '继承'],
-            ['dataType', '数据'],
-            ['防抖节流', '防抖节流'],
+            ['basic/dataType', '数据'],
+            ['basic/防抖节流', '防抖节流'],
           ]
         },
         {
           title: 'es6',
           children: [
-            ['class', 'class'],
+            ['es6/class', 'class'],
           ]
         }
       ],
@@ -88,16 +89,9 @@ module.exports = {
         }
       ],
       '/other/': [
-        {
-          title: 'git',
-          children: [
-            ['git', 'git']
-          ]
-        },
-        {
-          title: '算法',
-          children: []
-        }
+        ['git', 'git'],
+        ['database', '数据库'],
+        ['vscode', 'vscode']
       ]
     }
   },

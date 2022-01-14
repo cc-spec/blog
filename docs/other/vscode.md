@@ -8,7 +8,7 @@ tags:
   - 
 ---
 
-### [快捷键](https://www.cnblogs.com/schut/p/10461840.html)
+#### [快捷键](https://www.cnblogs.com/schut/p/10461840.html)
 - 补充：Ctrl+y 取消上次撤销
-### [修改编辑器配色](https://geek-docs.com/vscode/vscode-tutorials/vscode-modify-editor-color-matching.html)
-### [修改背景](https://zhuanlan.zhihu.com/p/364879728)
+#### [修改编辑器配色](https://geek-docs.com/vscode/vscode-tutorials/vscode-modify-editor-color-matching.html)
+#### [修改背景](https://zhuanlan.zhihu.com/p/364879728)
