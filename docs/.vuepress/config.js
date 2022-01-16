@@ -5,7 +5,6 @@ module.exports = {
   themeConfig: {
     subSidebar: 'structuring',
     sidebarDepth: 3,
-    // logo: ''
   },
   locales: {
     '/': {
@@ -20,15 +19,11 @@ module.exports = {
     }
   },
   themeConfig: {// 开启侧边栏
+    // logo: '', // 图标
     nav: [
       { text: '首页', link: '/' },
       { text: 'css', link: '/css/' },
-      { text: 'js', 
-        items: [
-          { text: '基础', link: '/js/'},
-          { text: 'es6', link: '/js/' }
-        ]
-      },
+      { text: 'js', link: '/js/'},
       { text: 'Vue', link: '/vue/' },
       { text: '组件库', link: '/componentLibrary/' },
       { text: '阅读', link: '/reading/' },
@@ -43,41 +38,39 @@ module.exports = {
     ],
     sidebar: {
       '/css/': [
-        {
-          title: '布局',
-          children: [
-            ['flex', 'flex布局'],
-            ['三栏自适应布局.md', '三栏自适应布局']
-          ]
-        }
+        'flex',
+        '三栏自适应布局',
+        '水平垂直居中'
       ],
       '/js/': [
         {
           title: '基础知识',
           children: [
-            ['scope', '作用域'],
-            ['closure', '闭包'],
-            ['module', '模块化'],
-            ['this', 'this'],
-            ['call&apply&bind', 'call、apply、bind'],
-            ['prototype', '原型和原型链'],
+            ['basic/scope', '作用域'],
+            ['basic/closure', '闭包'],
+            ['basic/module', '模块化'],
+            ['basic/this', 'this'],
+            ['basic/call&apply&bind', 'call、apply、bind'],
+            ['basic/prototype', '原型和原型链'],
             // ['inherit', '继承'],
-            ['dataType', '数据'],
-            ['防抖节流.md', '防抖节流'],
+            ['basic/dataType', '数据'],
+            ['basic/防抖节流', '防抖节流'],
+            ['basic/事件循环', '事件循环'],
           ]
         },
         {
           title: 'es6',
           children: [
-            ['class', 'class'],
+            ['es6/class', 'class'],
+            ['es6/let和const', 'let和const'],
           ]
         }
       ],
       '/vue/': [
-        {
-          title: 'vue理论知识',
-          children: []
-        }
+        '生命周期',
+        '组件间通信',
+        '数据双向绑定原理',
+        'vue Router'
       ],
       '/reading/': [
         {
@@ -88,16 +81,9 @@ module.exports = {
         }
       ],
       '/other/': [
-        {
-          title: 'git',
-          children: [
-            ['git', 'git']
-          ]
-        },
-        {
-          title: '算法',
-          children: []
-        }
+        'git',
+        ['database', '数据库'],
+        'vscode',
       ]
     }
   },

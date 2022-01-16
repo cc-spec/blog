@@ -1,13 +1,14 @@
 ---
 title: module
-author: coderc
-date: 2022-01-04 19:05:51
-permalink: /pages/2c69a2/
+date: 2022-01-14 21:04:43
+permalink: /pages/6af12a/
 categories:
   - js
+  - basic
 tags:
   - 
 ---
+
 # 模块化？
 > 模块化给你了一个方式去组织这些变量和函数。通过模块化，你可以把变量和函数合理的进行分组归类。它把这些函数和变量放在一个模块的作用域内。这个模块的作用域能够让其中的函数一起分享变量。
 

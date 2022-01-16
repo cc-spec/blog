@@ -25,3 +25,12 @@ git commit -m '更新' // 重新提交
 - 创建一个新的分支`git checkout -b newBranch`
 - 将当前未提交到本地（和服务器）的代码推入到Git的栈中`git stash`
 - 清空Git栈`git stash clear`
+
+## 四、撤销
+- 撤销一个提交
+  - `撤销：git reset --soft HEAD^`
+  - `还原：git revert -m l HEAD`
+- 撤销合并或拉动
+  - `git reset --hard`
+- 本次提交跟上次使用同样的描述
+  - `git commit --amend`
