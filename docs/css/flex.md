@@ -17,34 +17,34 @@ tags:
 ### 1. **父项常见属性**
 - **flex-direction：主轴的方向** 
   - row（默认）：x轴（从左到右）
-    - column：y轴（从上到下）
-    - row-reverse：x轴（从右到左）
-    - column-reverse：y轴（从下到上）
+  - column：y轴（从上到下）
+  - row-reverse：x轴（从右到左）
+  - column-reverse：y轴（从下到上）
 - **flex-wrap：主轴排列不下时是否换行**
   - wrap（默认）：换行，第一行在上方	
-    - wrap-reverse：换行，第一行在下方
-    - nowrap：不换行
+  - wrap-reverse：换行，第一行在下方
+  - nowrap：不换行
 - **flex-flow（flex-direction + flex-wrap）**
 - **⭐justify-content：项目在主轴上的排列方式**
   - flex-start（默认）：从左向右
-    - flex-end：从右向左
-    - ⭐cneter：居中排列
-    - space-around：先两端对齐，再平分剩余空间
-    - ⭐space-between：项目之间距离相等，每两个项目之间的间距是首尾项目距离边框的两倍
-    - space-evenly
+  - flex-end：从右向左
+  - ⭐cneter：居中排列
+  - space-around：项目之间距离相等，盒子之间的距离=盒子左右两侧的距离*2
+  - ⭐space-between：先两端对齐，再平分剩余空间
+  - space-evenly：除了项目之外的距离平分，盒子之间的距离=盒子左右两侧的距离
 - **align-items：项目在交叉轴上的排列方式**
   - flex-start：起点开始排列
   - flex-end：终点开始排列
-    - center：中点对齐
-    - baseline：基线对齐
-    - stretch：拉伸对齐
+  - center：中点对齐
+  - baseline：基线对齐
+  - stretch：拉伸对齐
 - **align-content：多根轴线的对齐方式**
   - flex-start
-    - flex-end
-    - center
-    - space-around
-    - space-between
-    - stretch
+  - flex-end
+  - center
+  - space-around：项目之间距离相等
+  - space-between：先两头后中间
+  - stretch：拉伸排列
 ### 2.**子项常见属性**
 - **order：项目的排列顺序**
 数值越小排列越靠前
