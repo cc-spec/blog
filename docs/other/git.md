@@ -34,3 +34,10 @@ git commit -m '更新' // 重新提交
   - `git reset --hard`
 - 本次提交跟上次使用同样的描述
   - `git commit --amend`
+
+## 五、git stash的正确打开方式
+- 暂存工作区：`git stash`
+- 取出工作区：`git stash pop`
+- 查看存了哪几个工作区：`git stash list`
+- 查看暂存的工作区都有啥更新：`git stash show 查看最新的stash中的内容`
+- 取出某个工作区：`git stash apply stash@{1} 取出第二工作区`
