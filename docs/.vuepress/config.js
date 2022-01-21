@@ -64,6 +64,12 @@ module.exports = {
             ['es6/class', 'class'],
             ['es6/let和const', 'let和const'],
           ]
+        },
+        {
+          title: 'API',
+          children: [
+            ['API/遍历', '遍历']
+          ]
         }
       ],
       '/vue/': [
