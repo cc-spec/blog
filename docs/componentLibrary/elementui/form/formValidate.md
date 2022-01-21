@@ -11,8 +11,32 @@ tags:
   - 
 ---
 
-# 一、整体校验
-
+## 一、整体校验
+- 添加校验：`<form :rules="rules">`
+- 校验逻辑
+  - trigger: blur||change
+```JavaScript
+rules: {
+  字段名: [
+    {required: 是否必填, trigger: 触发方式},
+    {validator: 校验函数, trigger: 触发方式},
+    {pattern: 校验正则表达式}
+    ...
+  ]
+}
+```
+## 二、常见校验
+### 1. 正则
+```JavaScript
+中文：/^[\u4e00-\u9fa5]{0,}$/
+中文或英文：/^[\u4e00-\u9fa5a-z]{0,}$/
+英文或数字：/^[0-9a-zA-Z]*$/
+中文英文数字：/^[\u4e00-\u9fa5a-z0-9]{0,}$/
+手机号码：/^1[3456789]\d{9}$/
+标签：/[\uD83C|\uD83D|\uD83E][\uDC00-\uDFFF][\u200D|\uFE0F]|[\uD83C|\uD83D|\uD83E][\uDC00-\uDFFF]|[0-9|*|#]\uFE0F\u20E3|[0-9|#]\u20E3|[\u203C-\u3299]\uFE0F\u200D|[\u203C-\u3299]\uFE0F|[\u2122-\u2B55]|\u303D|[\A9|\AE]\u3030|\uA9|\uAE|\u3030/gi
+```
+### 2. 特殊校验
+- **数字输入框联动校验**
 ```JavaScript
 /**
  * validateRange：两个数字输入框联动校验
