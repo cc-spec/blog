@@ -12,3 +12,4 @@ tags:
 - 补充：Ctrl+y 取消上次撤销
 #### [修改编辑器配色](https://geek-docs.com/vscode/vscode-tutorials/vscode-modify-editor-color-matching.html)
 #### [修改背景](https://zhuanlan.zhihu.com/p/364879728)
+#### [vscode插件推荐](https://github.com/varHarrie/varharrie.github.io/issues/10)
