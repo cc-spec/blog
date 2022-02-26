@@ -1,3 +1,13 @@
+---
+title: async&await
+date: 2022-02-23 21:26:14
+permalink: /pages/878ee0/
+categories:
+  - js
+  - es6
+tags:
+  - 
+---
 
 ## 一、什么是async/await
 ### 1. async函数（异步）

@@ -63,6 +63,8 @@ module.exports = {
           children: [
             ['es6/class', 'class'],
             ['es6/let和const', 'let和const'],
+            ['es6/async&await', 'async&await'],
+            ['es6/promise', 'promise'],
           ]
         },
         {
