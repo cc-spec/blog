@@ -140,28 +140,28 @@ promise.then(result => console.log(result)).catch(error => console.log(error))
   - 返回一个rejected状态的promise
 ## 三、手写promise的主要方法
 ### Promise实现
-(1) 观察者模式
-> 收集依赖 -> 触发通知 -> 取出依赖执行
-> Promise中的观察者模式：**new Promise -> then()收集回调 -> resolve/reject执行回调**
-(2) new Promise的时候做了什么
-- Promise接收一个executor(执行器)，在new Promise的时候立即执行executor回调
-- executor内部的异步操作被放入宏/微任务队列，等待执行
-- then被执行，收集成功/失败回调，放入成功/失败队列
-- executor内部的异步操作被执行，触发resolve/reject，从成功/失败队列中取出回调依次执行
-(3) promise A+ 对状态的规定
-- 只有三种状态，pending、fullfilled、rejected
-- 状态只能从pending -> fullfilled 或者 pending -> rejected，且不可逆
-(4) then方法如何链式调用
-- then方法返回了一个Promise
-- then方法需要拿到上一个then方法的返回值
-- then回调需要顺序执行
-(5) then方法接收到非函数
-- 直接将值传递到成功函数中
-(6) then方法中对状态的处理
-- 区分三种状态
-  - pending时将成功函数和失败函数push进不同的队列
-  - fullfilled时，执行成功函数，并且传入上一个then的返回值
-  - rejected时，执行失败函数，并且传入上一个then的返回值
+- **(1) 观察者模式**
+> 收集依赖 -> 触发通知 -> 取出依赖执行  
+> Promise中的观察者模式：**new Promise -> then()收集回调 -> resolve/reject执行回调**  
+- **(2) new Promise的时候做了什么**
+  - Promise接收一个executor(执行器)，在new Promise的时候立即执行executor回调
+  - executor内部的异步操作被放入宏/微任务队列，等待执行
+  - then被执行，收集成功/失败回调，放入成功/失败队列
+  - executor内部的异步操作被执行，触发resolve/reject，从成功/失败队列中取出回调依次执行
+- **(3) promise A+ 对状态的规定**
+  - 只有三种状态，pending、fullfilled、rejected
+  - 状态只能从pending -> fullfilled 或者 pending -> rejected，且不可逆
+- **(4) then方法如何链式调用**
+  - then方法返回了一个Promise
+  - then方法需要拿到上一个then方法的返回值
+  - then回调需要顺序执行
+- **(5) then方法接收到非函数**
+  - 直接将值传递到成功函数中
+- **(6) then方法中对状态的处理**
+  - 区分三种状态
+    - pending时将成功函数和失败函数push进不同的队列
+    - fullfilled时，执行成功函数，并且传入上一个then的返回值
+    - rejected时，执行失败函数，并且传入上一个then的返回值
 ```JavaScript
 // Promise三种状态
 const PENDING = 'pedding'
