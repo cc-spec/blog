@@ -1,4 +1,13 @@
-
+---
+title: async&await
+date: 2022-02-20 19:28:02
+permalink: /pages/1dada8/
+categories:
+  - js
+  - es6
+tags:
+  - 
+---
 ## 一、什么是async/await
 ### 1. async函数（异步）
 - async函数是generate函数的语法糖，表示期望当前函数中有异步操作，如果包含await，则一定会异步运行，否则为同步运行，通过promise.resolve()方法将返回值封装成一个promise对象
