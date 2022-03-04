@@ -1,7 +1,7 @@
 ---
 title: async&await
-date: 2022-02-20 19:28:02
-permalink: /pages/1dada8/
+date: 2022-02-23 21:26:14
+permalink: /pages/878ee0/
 categories:
   - js
   - es6
