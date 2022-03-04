@@ -42,3 +42,9 @@ git commit -m '更新' // 重新提交
 - 查看暂存的工作区都有啥更新：`git stash show 查看最新的stash中的内容`
 - 取出某个工作区：`git stash apply stash@{1} 取出第二工作区`
 - 新增的文件无法被存储：解决方法：git add加到版本控制中之后就可以stash
+
+## 六、撤销git reset
+- 使用`git reset --hard [commit-id]`丢弃了一切更改
+- 现在想找回reset之前的文件
+- `git reflog`查看提交记录，找到错误删除的文件的[commit-id]
+- 再次使用`git reset [commit-id]`回退 
