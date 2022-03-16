@@ -142,7 +142,7 @@ promise.then(result => console.log(result)).catch(error => console.log(error))
 ### Promise实现
 - **(1) 观察者模式**
 > 收集依赖 -> 触发通知 -> 取出依赖执行  
-> Promise中的观察者模式：**new Promise -> then()收集回调 -> resolve/reject执行回调**  
+> Promise中的观察者模式：**then()收集依赖 ->异步触发resolve -> resolve/reject执行回调** 
 - **(2) new Promise的时候做了什么**
   - Promise接收一个executor(执行器)，在new Promise的时候立即执行executor回调
   - executor内部的异步操作被放入宏/微任务队列，等待执行

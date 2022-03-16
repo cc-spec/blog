@@ -1,0 +1,35 @@
+### 1. 上个月的第一天
+```js
+moment().subtract(1, 'month').startOf('month').format('YYYY-MM-DD 00:00:00')
+```
+### 2. 上个月的最后一天
+```js
+moment().date(0).format('YYYY-MM-DD 23:59:59')
+```
+### 3. 上个月及往前推一年的时间范围
+```js
+// 日期
+<z-date-picker
+  v-model="month"
+  :auto-fill="true"
+  type="month" // 时间类型
+  placeholder="请选择查询月份"
+  :picker-options="pickerOptions" // 时间选择器选项参考
+  format="yyyy-MM" // 显示格式
+  value-format="yyyyMM" // 绑定值格式
+  :default-time="['00:00:00', '23:59:59']" // type="daterange" 日期范围选择使用的具体时间
+>
+</z-date-picker>
+
+pickerOptions: {
+  // 禁用时间
+  disabledDate(time) {
+    // 本月及往前推一年外的范围禁用
+    return time.getTime() > moment().subtract(1, 'month') || time.getTime() < moment().subtract(12, 'month')
+  }
+}
+```
+### 4. 当月第一天
+```js
+moment().startOf('month')
+``` 

@@ -33,5 +33,17 @@ tags:
     - let、const 声明变量时会为其隐式创造块级作用域
     - let、const不可重复声明
     - let、const不存在变量提升，因此会存在暂时性死区（声明之前调用会引发引用错误）的问题
+### 3. let、const实现
+- **let实现**
+- **const实现**
+```JavaScript
+function _const(key, value) {
+  const desc = {
+    value,
+    writable: false
+  }
+  Object.defineProperty(window, key, desc)
+}
+```
 ## 二、面试题
 <!-- TODO -->
