@@ -1,6 +1,7 @@
 module.exports = {
   title: '前端文档',
   description: '前端工程师',
+  base: '/blog/',
   theme: 'vdoing',
   themeConfig: {
     subSidebar: 'structuring',
