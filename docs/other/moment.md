@@ -1,3 +1,12 @@
+---
+title: moment
+date: 2022-03-23 19:13:43
+permalink: /pages/ddad19/
+categories:
+  - other
+tags:
+  - 
+---
 ### 1. 上个月的第一天
 ```js
 moment().subtract(1, 'month').startOf('month').format('YYYY-MM-DD 00:00:00')
@@ -33,3 +42,28 @@ pickerOptions: {
 ```js
 moment().startOf('month')
 ``` 
+
+### 5. 昨天
+```js
+moment().subtract(1, 'day').format('yyyy-MM-DD')
+```
+### 6. 往前推七天
+```js
+moment()、.subtract(7, 'days').format('yyyy-MM-DD') +
+'~' +
+moment().subtract(1, 'days').format('yyyy-MM-DD')
+```
+
+### 7. 本月剩余天数
+```js
+const days =
+  moment().daysInMonth() -
+  Number(
+    moment()
+      .subtract(1, 'days')
+      .format('yyyyMMDD')
+      .substring(6)
+  )
+days > 0 ? days : 0 // 本月剩余多少天
+slice substr substring
+```
