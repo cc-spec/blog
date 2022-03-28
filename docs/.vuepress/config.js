@@ -65,12 +65,14 @@ module.exports = {
             ['es6/let和const', 'let和const'],
             ['es6/async&await', 'async&await'],
             ['es6/promise', 'promise'],
+            ['es6/set&map', 'set&map'],
           ]
         },
         {
           title: 'API',
           children: [
-            ['API/遍历', '遍历']
+            ['API/遍历', '遍历'],
+            ['API/深浅拷贝', '深浅拷贝'],
           ]
         }
       ],
@@ -93,6 +95,7 @@ module.exports = {
         'git',
         ['database', '数据库'],
         'vscode',
+        'moment',
       ]
     }
   },
