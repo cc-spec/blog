@@ -12,6 +12,7 @@ tags:
 ## 一、数据类型分类
 ### 1. 简单数据类型
 - **`number、string、boolean、null、undefined、symbol、bigInt`**
+- symbol的特点：symbol创建的值是唯一的，当我暴露了一个对象，但是其中的部分属性不想被别人修改，就可以使用symbol使那些属性私有化，防止被别人篡改私有属性
 ### 2. 复杂数据类型
 - **`object`**
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ba0a18985135454fae55e9134b7f28ee~tplv-k3u1fbpfcp-watermark.image)
