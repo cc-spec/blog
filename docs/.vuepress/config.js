@@ -77,6 +77,7 @@ module.exports = {
             ['API/遍历', '遍历'],
             ['API/深浅拷贝', '深浅拷贝'],
             ['API/数组-扁平化', '数组-扁平化'],
+            ['API/数组-去重', '数组-去重'],
           ]
         }
       ],
@@ -85,7 +86,8 @@ module.exports = {
         '组件间通信',
         '插槽',
         '数据双向绑定原理',
-        'vue Router'
+        'vue Router',
+        // 'vuex',
       ],
       '/reading/': [
         {
