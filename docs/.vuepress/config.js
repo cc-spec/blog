@@ -26,7 +26,7 @@ module.exports = {
       { text: 'css', link: '/css/' },
       { text: 'js', link: '/js/'},
       { text: 'Vue', link: '/vue/' },
-      { text: '组件库', link: '/componentLibrary/' },
+      { text: 'elementui', link: '/componentLibrary/' },
       { text: '阅读', link: '/reading/' },
       { text: '其他', link: '/other/' },
       {
@@ -88,6 +88,27 @@ module.exports = {
         '数据双向绑定原理',
         'vue Router',
         // 'vuex',
+      ],
+      '/componentLibrary/': [
+        {
+          title: 'form',
+          children: [
+            ['elementui/form/formValidate', '表单校验'],
+          ]
+        },
+        {
+          title: 'table',
+          children: [
+            ['elementui/table/combineRow', '表格合并'],
+            ['elementui/table/expandRow', '表格行展开'],
+          ]
+        },
+        {
+          title: 'tree',
+          children: [
+            ['elementui/tree/过滤节点', '过滤节点'],
+          ]
+        },
       ],
       '/reading/': [
         {
