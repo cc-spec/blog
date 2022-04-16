@@ -76,6 +76,9 @@ output: {
 ### 5. 模式（mode）
   - development：开发环境
   - production：生产环境
+    - 默认开启Tre Shaking和Scope Hoisting两个特性
+    - Tree Shaking（摇树优化）
+    - Scope Hoisting（作用域提升）
   - none：无
 ### 6. 浏览器兼容性（browser compatibility）
 ### 7. 环境（environment）
@@ -84,7 +87,66 @@ output: {
 ### 2. 文件指纹
 ### 3. 文件压缩
 ### 4. css增强
+### 5. 动态import
 ### 5. 静态资源内联
+### 6. 和npm结合打包组件和基础库
+- 编写基本组件或基础库，通过export default... 导出
+- webpack配置
+  ```js
+  const TerserPlugin = require('terser-webpack-plugin')
+  module.exports = {
+    mode: "none",
+    entry: {
+      "large-number": "./src/index.js", // 开发环境源码打包
+      "large-number.min": "./src/index.js" // 生产环境压缩源码
+    },
+    output: {
+      filename: "[name].js",
+      library: {
+        name: "largeNumber", // 库名
+        type: "umd", // 暴露库的方式
+        export: "default" // 指定哪一个导出应该被暴露为一个库
+      },
+    },
+    optimization: { // 优化
+      minimize: true, // 告诉webpack使用TerserWebpackPlugin或其他插件压缩bundle
+      minimizer: [ // 自定义的压缩工具
+        new TerserPlugin({
+          include: /\.min\.js$/, // 正则表达式表示的需要被压缩的文件类型
+        })
+      ]
+    }
+  }
+  ```
+  - 入口及描述设置
+    - （1）根目录下创建index.js
+    ```js
+    if (process.env.NODE_ENV === 'production') { // 生产环境导入压缩版本
+      module.exports = require('./dist/large-number.min.js')
+    } else { // 开发环境导入非压缩版本
+      module.exports = require('./dist/large-number.js')
+    }
+    ```
+    - （2）package.json中配置库的说明
+    ```js
+    {
+      "name": "large-number-c", // npm上传的库名
+      "version": "1.0.0", // 版本
+      "description": "大数求和", // 库描述
+      "main": "index.js", // 引用依赖时的文件地址
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack",
+        "prepublish": "webpack"
+      },
+    }
+    ```
+  - 发布到npm上
+    - 登录npm：`npm login 输入name、password、email`
+    - 发布：`npm publish`
+  - 下载及使用
+    - 安装：`npm i large-number-c`
+    - 导入：`import largeNumber from 'large-number-c'`
 
 > 重点plugin
 ## 一、SplitChunksPlugin
