@@ -34,17 +34,21 @@ git commit -m '更新' // 重新提交
   - `git reset --hard`
 - 本次提交跟上次使用同样的描述
   - `git commit --amend`
-
-## 五、git stash的正确打开方式
-- 暂存工作区：`git stash`
-- 取出工作区：`git stash pop`
-- 查看存了哪几个工作区：`git stash list`
-- 查看暂存的工作区都有啥更新：`git stash show 查看最新的stash中的内容`
-- 取出某个工作区：`git stash apply stash@{1} 取出第二工作区`
-- 新增的文件无法被存储：解决方法：git add加到版本控制中之后就可以stash
-
-## 六、撤销git reset
 - 使用`git reset --hard [commit-id]`丢弃了一切更改
 - 现在想找回reset之前的文件
 - `git reflog`查看提交记录，找到错误删除的文件的[commit-id]
 - 再次使用`git reset [commit-id]`回退 
+
+## 五、git stash的正确打开方式
+- 暂存工作区：`git stash save "保存提示"`
+- 取出工作区：`git stash pop`
+- 查看存了哪几个工作区：`git stash list`
+- 查看暂存的工作区都有啥更新：`git stash show stash@{数字}查看最新的stash中的内容`
+- 取出某个工作区：`git stash apply stash@{1} 取出第二工作区`
+- 新增的文件无法被存储：解决方法：git add加到版本控制中之后就可以stash
+
+## 六、npm i 安装失败
+![npm安装失败](./npm.png)
+- 解决方法
+  - `npm view eslint-config-standard`
+  - `npm i https://registry.npmjs.org/eslint-config-standard/-/eslint-config-standard-16.0.3.tgz`
