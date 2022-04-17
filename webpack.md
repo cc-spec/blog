@@ -147,6 +147,14 @@ output: {
   - 下载及使用
     - 安装：`npm i large-number-c`
     - 导入：`import largeNumber from 'large-number-c'`
+## 四、优化
+### 1. 优化构建时的命令行显示日志
+- stats属性
+  - errors-only：只在发生错误时输出
+  - minimal：只有发生错误或有新的编译时输出
+- FriendlyErrorsWebpackPlugin插件
+  - 安装：`npm i friendly-errors-webpack-plugin -D`
+  - 导入：`const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')`
 
 > 重点plugin
 ## 一、SplitChunksPlugin
