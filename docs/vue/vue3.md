@@ -73,4 +73,19 @@ tags:
   - 整体结构  
   - ![整体结构](./allProjectStructure.png)  
   - src结构
-  - ![src结构](./projectStructure.png)  
+  - ![src结构](./projectStructure.png)
+### 2. 应用开发
+- 基础路由配置
+- 页面编辑
+- main.js中添加路由配置
+- App.vue中渲染
+## 五、vue3特点细节
+### 1. 响应式
+
+- proxy && value setter
+实现原理|defineProperty|proxy|value setter
+:-:|:-:|:-:|:-:
+实际场景|Vue2 响应式|Vue3 reactive|Vue3 ref
+优势|兼容性|基于proxy实现真正的拦截|实现简单
+劣势|数组和属性删除等拦截不了|兼容不了IE11|只拦截了value属性
+实际应用|Vue2|Vue3 复杂数据结构|Vue3 简单数据结构

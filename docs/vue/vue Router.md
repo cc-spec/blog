@@ -15,11 +15,18 @@ tags:
 ### 3. 应用
 - SPA：单页面复应用，在前后端分离的基础上加上前端路由，来维护url和资源的映射关系
 ## 二、Vue Router
+### 概念
+- router：当前应用内router实例
+- route：当前活跃路由
+- router-link：相当于a标签，通过href属性进行路由跳转
+- router-view：路由渲染的视图区
 ### 1. 实现改变url不对整个页面刷新的两种方式
-- url的hash
+- url的hash模式
 	- hash即#，代表网页中的一个位置
     - 改变#右边的值相当于跳转到网页的一部分，不会对整个页面进行刷新
+  - hash改变时会触发hashchange事件，通过监听该事件实现动态切换页面`window.addEventListener('hashchange', fn)`
 - HTML5的history模式
+  - 基于pushState、replaceState、popState
 	- **history.pushState(data, title, ?url)**：不刷新页面的情况下跳转到指定的url，对应入栈
     - **history.replaceState(data, title, ?url)**：不刷新页面的情况下跳转到指定的url，但是无回退功能
     - **history.back()**：回退，对应出栈
@@ -62,3 +69,4 @@ tags:
       ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5e439cdc45034cd8a78a87ad45112dec~tplv-k3u1fbpfcp-watermark.image)
       ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4a9963ecdb9e411ab6986decc7c3180b~tplv-k3u1fbpfcp-watermark.image)
       - (2). 如果在路由组件中需要获取参数，可通过`this.$route.query.参数名`获取
+## 三、路由导航守卫
