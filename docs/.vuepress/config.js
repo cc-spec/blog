@@ -88,6 +88,7 @@ module.exports = {
         '数据双向绑定原理',
         'vue Router',
         // 'vuex',
+        'vue3'
       ],
       '/componentLibrary/': [
         {
