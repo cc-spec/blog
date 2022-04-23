@@ -83,9 +83,10 @@ tags:
 ### 1. 响应式
 
 - proxy && value setter
-实现原理|defineProperty|proxy|value setter
+
+原理|defineProperty|proxy|value setter
 :-:|:-:|:-:|:-:
-实际场景|Vue2 响应式|Vue3 reactive|Vue3 ref
+场景|Vue2 响应式|Vue3 reactive|Vue3 ref
 优势|兼容性|基于proxy实现真正的拦截|实现简单
 劣势|数组和属性删除等拦截不了|兼容不了IE11|只拦截了value属性
 实际应用|Vue2|Vue3 复杂数据结构|Vue3 简单数据结构
