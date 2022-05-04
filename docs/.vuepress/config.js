@@ -92,22 +92,28 @@ module.exports = {
       ],
       '/componentLibrary/': [
         {
-          title: 'form',
+          title: 'Form',
           children: [
             ['elementui/form/formValidate', '表单校验'],
           ]
         },
         {
-          title: 'table',
+          title: 'Table',
           children: [
             ['elementui/table/combineRow', '表格合并'],
             ['elementui/table/expandRow', '表格行展开'],
           ]
         },
         {
-          title: 'tree',
+          title: 'Tree',
           children: [
             ['elementui/tree/过滤节点', '过滤节点'],
+          ]
+        },
+        {
+          title: 'Cascader',
+          children: [
+            ['elementui/cascader/动态加载', '动态加载'],
           ]
         },
       ],
