@@ -27,7 +27,7 @@ module.exports = {
       { text: 'js', link: '/js/'},
       { text: 'Vue', link: '/vue/' },
       { text: 'elementui', link: '/componentLibrary/' },
-      { text: '阅读', link: '/reading/' },
+      { text: '网络', link: '/network/' },
       { text: '其他', link: '/other/' },
       {
         text: 'cc的前端博客',
@@ -117,13 +117,9 @@ module.exports = {
           ]
         },
       ],
-      '/reading/': [
-        {
-          title: '网络',
-          children: [
-            ['图解HTTP.md', '图解HTTP']
-          ]
-        }
+      '/network/': [
+        '图解HTTP',
+        '性能优化',
       ],
       '/other/': [
         'git',
