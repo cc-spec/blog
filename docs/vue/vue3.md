@@ -90,3 +90,119 @@ tags:
 优势|兼容性|基于proxy实现真正的拦截|实现简单
 劣势|数组和属性删除等拦截不了|兼容不了IE11|只拦截了value属性
 实际应用|Vue2|Vue3 复杂数据结构|Vue3 简单数据结构
+
+- 使用
+  - 通过 reactive 或者 ref 函数，把数据包裹成响应式对象，并且通过 effect 函数注册回调函数，然后在数据修改之后，响应式地通知 effect 去执行回调函数即可
+- 实现
+  - 基本知识
+    - 对象描述符
+    - Proxy
+    - Reflect
+    - 依赖地图  
+    ![](./targetMap.png)
+  - **（1）reactive.js：return proxy**
+  ```js
+  import { mutableHandlers } from './baseHandlers'
+
+  export reactive(target) {
+    if (typeof target !== 'object') {
+      console.warn(`reactive ${target} 必须是一个对象`)
+      return target
+    }
+    // 通过Proxy代理对象target，mutableHandlers修改操作（这里指的是get和set）的默认行为，相当于在get和set前设置一层拦截
+    return new Proxy(target, mutableHandlers)
+  }
+  ```
+  - **（2）baseHandler.js：get取值：track依赖收集，set赋值：trigger触发更新**
+  ```js
+  import { reactive } from './reactive'
+  import { track, trigger } from './effect'
+
+  const get = createGetter()
+  const set = createSetter()
+
+  function createGetter(shallow = false) {
+    return function get(target, key, receiver) {
+      const res = Reflect.get(target, key, receiver) // 取值
+      track(target, 'get', key) // 依赖收集
+      if (typeof res === 'object') {
+        return shallow ? res : reactive(res)
+      }
+    }
+  }
+
+  function createSetter() {
+    return function set(target, key, value, receiver) {
+      const res = Reflect.set(target, key, value, receiver) // 赋值
+      trigger(target, 'set', key) // 触发更新
+      return res
+    }
+  }
+
+  export const mutableHandlers = { get, set }
+  ```
+  - **（3）effect.js：track函数、trigger函数、effect函数**
+  ```js
+  let activeEffect = null
+  const targetMap = new weakMap()
+
+  export function effect(fn, options = {}) {
+    // effect嵌套，通过队列管理
+    const effectFn = () => {
+      try {
+        activeEffect = effectFn
+        // fn执行的时候，内部读取响应式数据
+        fn()
+      } finally {
+        activeEffect = null
+      }
+    }
+    if (!options.lazy) {
+      effectFn()
+    }
+    effectFn.scheduler = options.scheduler
+    return effectFn
+  }
+
+  export function track(target, type, key) {
+    // 1、根据target找到对应的dep
+    let depsMap = targetMap.get(target)
+    if (!depsMap) {
+      // 没找到dep，初始化
+      targetMap.set(target, (depsMap = new Map()))
+    }
+    // 2、根据key获取effect
+    let deps = depsMap.get(key)
+    if (!deps) {
+      // 没找到effect，初始化
+      deps = new Set()
+    }
+    // 3、effect存在并且已经注册过，就添加到deps里面
+    if (!deps.has(activeEffect) && activeEffect) {
+      deps.add(activeEffect)
+    }
+    // 4、收集依赖
+    depsMap.set(key, deps)
+  }
+
+  export function trigger(target, type, key) {
+    // 1、根据target找到对应的dep
+    const depsMap = targetMap.get(target)
+    if (!depsMap) {
+      return
+    }
+    // 2、根据key获取effect
+    const deps = depsMap.get(key)
+    if (!deps) {
+      return
+    }
+    // 3、按照一定顺序执行effect
+    deps.forEach((effectFn) => {
+      if (effectFn.scheduler) {
+        effectFn.scheduler
+      } else {
+        effectFn()
+      }
+    })
+  }
+  ```
