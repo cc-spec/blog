@@ -95,6 +95,7 @@ module.exports = {
           title: 'Form',
           children: [
             ['elementui/form/formValidate', '表单校验'],
+            ['elementui/form/select', '下拉框'],
           ]
         },
         {

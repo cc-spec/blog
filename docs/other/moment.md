@@ -18,7 +18,7 @@ moment().date(0).format('YYYY-MM-DD 23:59:59')
 ### 3. 上个月及往前推一年的时间范围
 ```js
 // 日期
-<z-date-picker
+<el-date-picker
   v-model="month"
   :auto-fill="true"
   type="month" // 时间类型
@@ -28,7 +28,7 @@ moment().date(0).format('YYYY-MM-DD 23:59:59')
   value-format="yyyyMM" // 绑定值格式
   :default-time="['00:00:00', '23:59:59']" // type="daterange" 日期范围选择使用的具体时间
 >
-</z-date-picker>
+</el-date-picker>
 
 pickerOptions: {
   // 禁用时间
@@ -49,7 +49,7 @@ moment().subtract(1, 'day').format('yyyy-MM-DD')
 ```
 ### 6. 往前推七天
 ```js
-moment()、.subtract(7, 'days').format('yyyy-MM-DD') +
+moment().subtract(7, 'days').format('yyyy-MM-DD') +
 '~' +
 moment().subtract(1, 'days').format('yyyy-MM-DD')
 ```
