@@ -44,6 +44,7 @@ module.exports = {
         '水平垂直居中',
         '重排和重绘',
         'BFC',
+        '文本溢出换行',
       ],
       '/js/': [
         {
@@ -104,6 +105,7 @@ module.exports = {
           children: [
             ['elementui/table/combineRow', '表格合并'],
             ['elementui/table/expandRow', '表格行展开'],
+            ['elementui/table/checkboxRow', '表格部分数据禁用'],
           ]
         },
         {
