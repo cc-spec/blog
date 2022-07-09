@@ -46,9 +46,3 @@ git commit -m '更新' // 重新提交
 - 查看暂存的工作区都有啥更新：`git stash show stash@{数字}查看最新的stash中的内容`
 - 取出某个工作区：`git stash apply stash@{1} 取出第二工作区`
 - 新增的文件无法被存储：解决方法：git add加到版本控制中之后就可以stash
-
-## 六、npm i 安装失败
-![npm安装失败](./npm.png)
-- 解决方法
-  - `npm view eslint-config-standard`
-  - `npm i https://registry.npmjs.org/eslint-config-standard/-/eslint-config-standard-16.0.3.tgz`

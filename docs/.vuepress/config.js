@@ -127,6 +127,7 @@ module.exports = {
       ],
       '/other/': [
         'git',
+        'npm',
         ['database', '数据库'],
         'vscode',
         'moment',
