@@ -21,12 +21,7 @@ git commit -m '更新' // 重新提交
 - git pull：从远程获取最新版本并merge到本地
 - git fetch：从远程获取最新版本但是不自动merge
 
-## 三、git stash保存暂存区，切换到另一个分支后出现冲突
-- 创建一个新的分支`git checkout -b newBranch`
-- 将当前未提交到本地（和服务器）的代码推入到Git的栈中`git stash`
-- 清空Git栈`git stash clear`
-
-## 四、撤销
+## 三、撤销
 - 撤销一个提交
   - `撤销：git reset --soft HEAD^`
   - `还原：git revert -m l HEAD`
@@ -39,10 +34,11 @@ git commit -m '更新' // 重新提交
 - `git reflog`查看提交记录，找到错误删除的文件的[commit-id]
 - 再次使用`git reset [commit-id]`回退 
 
-## 五、git stash的正确打开方式
+## 四、git stash的正确打开方式
 - 暂存工作区：`git stash save "保存提示"`
 - 取出工作区：`git stash pop`
 - 查看存了哪几个工作区：`git stash list`
 - 查看暂存的工作区都有啥更新：`git stash show stash@{数字}查看最新的stash中的内容`
 - 取出某个工作区：`git stash apply stash@{1} 取出第二工作区`
 - 新增的文件无法被存储：解决方法：git add加到版本控制中之后就可以stash
+- 清空工作区：`git stash clear`

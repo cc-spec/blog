@@ -22,7 +22,7 @@ tags:
 - 添加源：`nrm add 源名 源地址`
 - 切换源：`nrm use 源名`
 - 查看当前源：`nrm ls`
-## 三、npm、nvm、nrm、npx
+## 三、npm、nvm、nrm、npx、pnpm
 ### 1. npm（Node Package Manager）
 - node包管理器
 ### 2. nvm（Node.js version manager）
@@ -46,3 +46,10 @@ tags:
   - 到 node_modules/.bin 路径检查对应的命令是否存在，找到之后执行；
   - 没有找到，就去环境变量 $PATH 里面，检查对应命令是否存在，找到之后执行;
   - 还是没有找到，自动下载一个临时的依赖包最新版本在一个临时目录，然后再运行命令，运行完之后删除，不污染全局环境。
+### 5. pnpm（包管理器）
+- 优势
+  - 安装速度快
+  - 高效利用磁盘空间
+- 安装：`npm i -g pnpm`
+- 安装依赖：`pnpm i`
+- 卸载：`npm rm -g pnpm`
