@@ -37,6 +37,19 @@ pickerOptions: {
     return time.getTime() > moment().subtract(1, 'month') || time.getTime() < moment().subtract(12, 'month')
   }
 }
+
+// 动态禁用
+pickerEndOptions: {
+  // 禁用时间
+  disabledDate: this.disabledDate
+}
+
+methods: {
+  disabledDate(time) {
+    const startDate = this.form.startDate // 动态变化
+    return moment(time).format('X') < moment(startDate).format('X')
+  }
+},
 ```
 ### 4. 当月第一天
 ```js
