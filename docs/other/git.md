@@ -42,3 +42,9 @@ git commit -m '更新' // 重新提交
 - 取出某个工作区：`git stash apply stash@{1} 取出第二工作区`
 - 新增的文件无法被存储：解决方法：git add加到版本控制中之后就可以stash
 - 清空工作区：`git stash clear`
+
+## 五、提交代码至错误分支
+- 查看日志：`git log`
+- reset：`git reset 提交前的节点`
+- 恢复后暂存：`git stash`
+- 切换分支后释放暂存
