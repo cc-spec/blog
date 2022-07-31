@@ -132,6 +132,7 @@ module.exports = {
         ['database', '数据库'],
         'vscode',
         'moment',
+        'echarts',
       ]
     }
   },
