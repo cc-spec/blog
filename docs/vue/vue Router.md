@@ -70,3 +70,38 @@ tags:
       ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4a9963ecdb9e411ab6986decc7c3180b~tplv-k3u1fbpfcp-watermark.image)
       - (2). 如果在路由组件中需要获取参数，可通过`this.$route.query.参数名`获取
 ## 三、路由导航守卫
+### 1. 什么是导航守卫
+- 导航：路由正在发生变化
+- 导航守卫：通过跳转或取消的方式守卫导航
+### 2. 分类
+- to，from，next
+  - to：即将要进入的目标
+  - from：当前导航正要离开的路由
+  - next：但凡涉及到有next参数的钩子，必须调用next() 才能继续往下执行下一个钩子，否则路由跳转等会停止
+    - next(false)：中断跳转
+    - next(error)：导航中止并传递错误
+    - next({path: '/'})：跳转到不同的地址
+- 全局路由钩子
+  - 全局前置守卫路由跳转前触发：router.beforeEach(to, from, next)
+  - 全局解析守卫路由跳转前触发：router.beforeResolve(to, from, next)
+  - 全局后置钩子路由跳转完成后触发：router.afterEach(to, from, failures)
+- 单个路由钩子
+  - 进入路由触发：routes[i].beforeEnter(to, from, next)
+- 组件路由钩子
+  - 渲染组件对应的路由前：beforeRouteEnter(to, from, next((vm) => {}))
+  - 路由改变，该组件被复用时：beforeRouteUpdate(to, from, next)
+  - 导航离开组件的路由时：beforeRouteLeave(to, from, next)
+### 3. 导航解析流程
+- 触发导航 → beforeRouteLeave → beforeEach → beforeRouteUpdate → beforeEnter → beforeRouteEnter → beforeResolve → afterEach
+- 导航被触发。
+- 在失活的组件里调用 beforeRouteLeave 守卫。
+- 调用全局的 beforeEach 守卫。
+- 在重用的组件里调用 beforeRouteUpdate 守卫(2.2+)。
+- 在路由配置里调用 beforeEnter。
+- 解析异步路由组件。
+- 在被激活的组件里调用 beforeRouteEnter。
+- 调用全局的 beforeResolve 守卫(2.5+)。
+- 导航被确认。
+- 调用全局的 afterEach 钩子。
+- 触发 DOM 更新。
+- 调用 beforeRouteEnter 守卫中传给 next 的回调函数，创建好的组件实例会作为回调函数的参数传入。
