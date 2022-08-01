@@ -74,25 +74,25 @@ tags:
 - 导航：路由正在发生变化
 - 导航守卫：通过跳转或取消的方式守卫导航
 ### 2. 分类
-- to，from，next
+- **to，from，next**
   - to：即将要进入的目标
   - from：当前导航正要离开的路由
   - next：但凡涉及到有next参数的钩子，必须调用next() 才能继续往下执行下一个钩子，否则路由跳转等会停止
     - next(false)：中断跳转
     - next(error)：导航中止并传递错误
     - next({path: '/'})：跳转到不同的地址
-- 全局路由钩子
+- **全局路由钩子**
   - 全局前置守卫路由跳转前触发：router.beforeEach(to, from, next)
   - 全局解析守卫路由跳转前触发：router.beforeResolve(to, from, next)
   - 全局后置钩子路由跳转完成后触发：router.afterEach(to, from, failures)
-- 单个路由钩子
+- **单个路由钩子**
   - 进入路由触发：routes[i].beforeEnter(to, from, next)
-- 组件路由钩子
+- **组件路由钩子**
   - 渲染组件对应的路由前：beforeRouteEnter(to, from, next((vm) => {}))
   - 路由改变，该组件被复用时：beforeRouteUpdate(to, from, next)
   - 导航离开组件的路由时：beforeRouteLeave(to, from, next)
 ### 3. 导航解析流程
-- 触发导航 → beforeRouteLeave → beforeEach → beforeRouteUpdate → beforeEnter → beforeRouteEnter → beforeResolve → afterEach
+> **触发导航 → beforeRouteLeave → beforeEach → beforeRouteUpdate → beforeEnter → beforeRouteEnter → beforeResolve → afterEach**
 - 导航被触发。
 - 在失活的组件里调用 beforeRouteLeave 守卫。
 - 调用全局的 beforeEach 守卫。
