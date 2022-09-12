@@ -80,3 +80,10 @@ const days =
 days > 0 ? days : 0 // 本月剩余多少天
 slice substr substring
 ```
+
+### 8. 已创建天数：(当前日期-创建日期)+1
+```js
+let currTime = moment().format('YYYY-MM-DD')
+let createdTime = moment(data.createdTime).format('YYYY-MM-DD')
+moment(currTime).diff(createdTime, 'days') + 1
+```
