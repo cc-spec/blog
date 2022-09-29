@@ -29,3 +29,50 @@ methods: {
   },
 }
 ```
+> 定制化序号
+```javascript
+import { h } from 'vue'
+import first from '@/assets/first@2x.png'
+import second from '@/assets/second@2x.png'
+import third from '@/assets/third@2x.png'
+
+function indexMethod(value: number) {
+  if (value === 0) {
+    return h('img', {
+      src: first,
+      style: {
+        width: '60%',
+        'vertical-align': 'middle'
+      }
+    })
+  }
+  if (value === 1) {
+    return h('img', {
+      src: second,
+      style: {
+        width: '60%',
+        'vertical-align': 'middle'
+      }
+    })
+  }
+  if (value === 2) {
+    return h('img', {
+      src: third,
+      style: {
+        width: '60%',
+        'vertical-align': 'middle'
+      }
+    })
+  }
+  return value + 1
+}
+
+export const columns = [
+  {
+    label: '序号',
+    fixed: true,
+    type: 'index'
+    index: indexMethod
+  },
+]
+```
