@@ -87,3 +87,13 @@ let currTime = moment().format('YYYY-MM-DD')
 let createdTime = moment(data.createdTime).format('YYYY-MM-DD')
 moment(currTime).diff(createdTime, 'days') + 1
 ```
+
+### 9. 限制五年范围
+```js
+const timeInterval = moment(endTime).subtract(5, 'years') // 结束时间减五年
+const isAfter = moment(timeInterval).isAfter(moment(startTime)) // 结束时间减五年是否晚于开始时间 是→超过五年 否→五年内
+if (isAfter) {
+  this.msg('最多支持查看5年的数据')
+  return
+}
+```
