@@ -56,3 +56,39 @@ this.chart.dispatchAction({
   seriesIndex: 4
 })
 ```
+## 四、折线图渐变
+```js
+series: [
+  {
+    name: '', // 变更
+    type: 'line',
+    smooth: true,
+    symbol: 'none',
+    color: '#1042DF',
+    data: [],
+    yAxisIndex: 0,
+    areaStyle: {
+      normal: {
+        //渐变色
+        color: new echarts.graphic.LinearGradient(
+          0,
+          0,
+          0,
+          1,
+          [
+            {
+              offset: 0,
+              color: 'rgba(16, 66, 223, 0.40)'
+            },
+            {
+              offset: 1,
+              color: 'rgba(16, 66, 223, 0)'
+            }
+          ],
+          false
+        )
+      }
+    }
+  }
+]
+```
