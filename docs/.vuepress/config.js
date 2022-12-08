@@ -45,6 +45,7 @@ module.exports = {
         '重排和重绘',
         'BFC',
         '文本溢出换行',
+        '特殊样式'
       ],
       '/js/': [
         {
@@ -82,6 +83,7 @@ module.exports = {
           ]
         },
         ['ts/basic', 'TS'],
+        ['算法/排序', '排序'],
       ],
       '/vue/': [
         '生命周期',
@@ -133,6 +135,7 @@ module.exports = {
         'vscode',
         'moment',
         'echarts',
+        '问题记录'
       ]
     }
   },
