@@ -1,3 +1,12 @@
+---
+title: webpack
+date: 2022-04-05 19:21:24
+permalink: /pages/5fa477/
+categories:
+  - other
+tags:
+  - 
+---
 ## 一、什么是webpack
 ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2240c2f6d51b4b57bf70586e744a06d9~tplv-k3u1fbpfcp-watermark.image?)
 - 官网：静态模块化打包工具

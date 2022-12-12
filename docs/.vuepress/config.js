@@ -30,7 +30,7 @@ module.exports = {
       { text: '网络', link: '/network/' },
       { text: '其他', link: '/other/' },
       {
-        text: 'cc的前端博客',
+        text: 'mine',
         items: [
           { text:'GitHub', link: 'https://github.com/cc-spec' },
           { text: '掘金', link: 'https://juejin.cn/user/1996368848647502' }
