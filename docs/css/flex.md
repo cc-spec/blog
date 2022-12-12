@@ -69,7 +69,69 @@ tags:
         - 缩：自己-(((容器-所有子项)/容器)x自己)
       - 默认值：0（也就是均分）
 - **align-self：设置单个项目与其他项目有不同的排列方式**
-## 三、面试题
+## 三、常见布局
+### 1. 上左下右
+![上左下右](./assets/topLeftBottomRight.png)
+```html
+<div class="container2">
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+```
+```css
+.container2 {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  height: 150px;
+  background-color: #ccc;
+}
+
+.item {
+  box-sizing: border-box;
+  background: #eee;
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+}
+
+.container2 .item:nth-child(2) {
+  align-self: flex-end;
+}
+```
+### 2. 流式布局
+![流式布局](./assets/streaming.png)
+```html
+<div class="container2">
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+```
+```css
+.container2 {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+
+.item {
+  box-sizing: border-box;
+  background: #eee;
+  flex: 0 0 20%;
+  height: 40px;
+  margin: 5px;
+}
+```
+## 四、面试题
 - flex: 1;
 = flex: 1 1 任意数字加任意长度单位，实现的效果是空间等分
 - flex: auto;
