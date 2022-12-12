@@ -135,7 +135,6 @@ module.exports = {
         'vscode',
         'moment',
         'echarts',
-        '问题记录'
       ]
     }
   },

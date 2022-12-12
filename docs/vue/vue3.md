@@ -38,7 +38,7 @@ tags:
   ```
 ### 2. Composition API组合语法
   - 把各个功能的数据跟方法放在一起，便于复用
-![Composition API示意图](./compositionAPI.png)
+![Composition API示意图](./assets/compositionAPI.png)
 ### 3. 新的组件
 - Fragment: Vue 3 组件不再要求有一个唯一的根节点，清除了很多无用的占位 div。
 - Teleport: 允许组件渲染在别的元素内，主要开发弹窗组件的时候特别有用。
@@ -71,9 +71,9 @@ tags:
   - 安装vuex和vue router：`npm install vue-router@next vuex@next`
 - 项目结构
   - 整体结构  
-  - ![整体结构](./allProjectStructure.png)  
+  - ![整体结构](./assets/allProjectStructure.png)  
   - src结构
-  - ![src结构](./projectStructure.png)
+  - ![src结构](./assets/projectStructure.png)
 ### 2. 应用开发
 - 基础路由配置
 - 页面编辑
@@ -99,7 +99,7 @@ tags:
     - Proxy
     - Reflect
     - 依赖地图  
-    ![](./targetMap.png)
+    ![](./assets/targetMap.png)
   - **（1）reactive.js：return proxy**
   ```js
   import { mutableHandlers } from './baseHandlers'
@@ -206,3 +206,10 @@ tags:
     })
   }
   ```
+### 2. Composition API 组合语法
+- setup组件选项：setup是一个接收props和context的函数，在组件被创建之前执行
+
+### 3. 组件间通信
+- 父传子
+  - props
+- 子传父

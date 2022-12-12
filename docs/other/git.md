@@ -17,7 +17,7 @@ git add . // 重新添加到暂存区
 git commit -m '更新' // 重新提交
 ```
 ## 二、git pull 和 git fetch 的区别
-- ![image.png](./git.png)
+- ![image.png](./assets/git.png)
 - git pull：从远程获取最新版本并merge到本地
 - git fetch：从远程获取最新版本但是不自动merge
 

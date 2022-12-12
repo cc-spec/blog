@@ -9,7 +9,7 @@ tags:
 ---
 
 ## 一、npm i 安装eslint-config-standard失败
-![npm安装失败](./npm.png)
+![npm安装失败](./assets/npm.png)
 - 解决方法
   - `npm view eslint-config-standard`
   - `npm i https://registry.npmjs.org/eslint-config-standard/-/eslint-config-standard-16.0.3.tgz`
