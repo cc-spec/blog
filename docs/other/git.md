@@ -39,7 +39,7 @@ git commit -m '更新' // 重新提交
 - 取出工作区：`git stash pop`
 - 查看存了哪几个工作区：`git stash list`
 - 查看暂存的工作区都有啥更新：`git stash show stash@{数字}查看最新的stash中的内容`
-- 取出某个工作区：`git stash apply stash@{1} 取出第二工作区`
+- 取出某个工作区：`git stash apply 1 取出第二工作区`
 - 新增的文件无法被存储：解决方法：git add加到版本控制中之后就可以stash
 - 清空工作区：`git stash clear`
 
