@@ -58,7 +58,7 @@ module.exports = {
             ['basic/call&apply&bind', 'call、apply、bind'],
             ['basic/prototype', '原型和原型链'],
             // ['inherit', '继承'],
-            ['basic/dataType', '数据'],
+            ['basic/dataType', '数据类型'],
             ['basic/防抖节流', '防抖节流'],
             ['basic/事件循环', '事件循环'],
           ]
@@ -83,7 +83,7 @@ module.exports = {
           ]
         },
         ['ts/basic', 'TS'],
-        ['算法/排序', '排序'],
+        // ['算法/排序', '排序'],
       ],
       '/vue/': [
         '生命周期',

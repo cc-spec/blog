@@ -33,7 +33,7 @@ tags:
 - 1. 自适应两栏布局（基于特性4）
   - 左侧内容撑开，右侧自适应
   - 实现：左侧float，右侧开启BFC
-  ![自适应两栏布局](./assets/towColumns.png)
+  ![自适应两栏布局](./assets/twoColumns.png)
   ```html
   <style>
     * {
