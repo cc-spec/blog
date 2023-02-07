@@ -121,3 +121,8 @@ let obj = {}
 console.log(Array.isArray(obj))
 ```
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2286918b95c342148aa10001214165e8~tplv-k3u1fbpfcp-watermark.image)
+- **`__proto__`**
+```JavaScript
+let arr = []
+console.log(arr.__proto__ === Array.prototype) // true
+```
