@@ -48,3 +48,8 @@ git commit -m '更新' // 重新提交
 - reset：`git reset 提交前的节点`
 - 恢复后暂存：`git stash`
 - 切换分支后释放暂存
+## 六、多个ssh设置
+- 创建一个新的ssh ssh-keygen -t rsa -C "15719192636@163.com"
+- 换个名字 Enter file in which to save the key (/Users/caofang/.ssh/id_rsa): /Users/caofang/.ssh/id_rsa_github
+- 查看所有文件 ls -a ~/.ssh  查看生成的密钥 cat ~/.ssh/id_rsa_github.pub
+- 添加密钥 ssh-add ~/.ssh/id_rsa_github
