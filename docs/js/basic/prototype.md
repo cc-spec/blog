@@ -34,7 +34,7 @@ function test(a) {
   this.a = a
 }
 ```
-![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/97da58df50214ee28e2daa070b739414~tplv-k3u1fbpfcp-watermark.image)
+![原型链第一层](./assets/prototype1.png)
 ### 2. 整个原型链
 - **原型链描述的是实例与原型的关系**
 - 如上所述，实例通过__proto__指向的原型对象又是另一个类型的实例，有\_\_proto__指针指向自己的原型对象，这个原型对象同样也有自己的__proto__，指向自己的原型对象，由于js中万物皆对象，所以原型链的最高层是Object.prototype，Object.prototype.__proto__为null，这条由__proto__串起来的链就是原型链
@@ -43,9 +43,9 @@ function test(a) {
 - Function：函数的构造函数
 - Object：对象的构造函数
 - **Object.prototype & Function.prototype**
-  - 都是引擎创建的，引擎先创建了Object.prototype，接着又创建了Function.prototype，又通过__proto__将两者联系起来（**Function.prototype.__proto__ === Object.prototype→true**）
-- **Function.prototype & Function.__proto__**
-  - 先有prototype再有构造函数，所有构造函数都可以通过原型链找到Function.prototype，Function本身也是一个函数，所以将Function.__proto__也指向了Function.prototype（**Function.prototype === Function.__proto__→true**）
+  - 都是引擎创建的，引擎先创建了Object.prototype，接着又创建了Function.prototype，又通过\_\_proto__将两者联系起来（**Function.prototype.\_\_proto__ === Object.prototype→true**）
+- **Function.prototype & Function.\_\_proto__**
+  - 先有prototype再有构造函数，所有构造函数都可以通过原型链找到Function.prototype，Function本身也是一个函数，所以将Function.__proto__也指向了Function.prototype（**Function.prototype === Function.\_\_proto__→true**）
 - **Object.constructor & Function.prototype**
   - function Object是一个构造函数，相当于是function Function的实例，所以实例的__proto__指向他的原型对象，也就是Function.prototype（**Object.constructor === Function.prototype→true**）
 ![原型链](./assets/prototype.png)
