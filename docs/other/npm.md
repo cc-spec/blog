@@ -28,10 +28,11 @@ tags:
 ### 2. nvm（Node.js version manager）
 - node版本控制
 - nvm常用命令
-  - 安装指定版本：`nvm install 版本号`
-  - 删除指定版本：`nvm uninstall 版本号`
-  - 切换版本：`nvm use 版本号`
+  - 安装指定版本：`nvm install 12（版本号）`
+  - 删除指定版本：`nvm uninstall 12（版本号）`
+  - 切换版本：`nvm use 12（版本号）`
   - 查看本地安装的版本：`nvm ls`
+  - 设置默认的node版本：`nvm alias default 12（版本号）`
 ### 3. nrm（NPM registry manager）
 - npm源地址管理
 - nrm常用命令
