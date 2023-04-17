@@ -53,3 +53,9 @@ git commit -m '更新' // 重新提交
 - 换个名字 Enter file in which to save the key (/Users/caofang/.ssh/id_rsa): /Users/caofang/.ssh/id_rsa_github
 - 查看所有文件 ls -a ~/.ssh  查看生成的密钥 cat ~/.ssh/id_rsa_github.pub
 - 添加密钥 ssh-add ~/.ssh/id_rsa_github
+
+## 七、其他操作
+git reflog 查看本地提交
+git show commitid 查看某个id提交的内容
+git revert commitid 撤回某个id提交的内容
+git cherry-pick commitid 找回某个id提交的内容
