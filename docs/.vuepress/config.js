@@ -88,6 +88,7 @@ module.exports = {
       '/vue/': [
         '生命周期',
         '组件间通信',
+        'v-model',
         '插槽',
         '数据双向绑定原理',
         'vue Router',
