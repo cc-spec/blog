@@ -55,7 +55,16 @@ git commit -m '更新' // 重新提交
 - 添加密钥 ssh-add ~/.ssh/id_rsa_github
 
 ## 七、其他操作
-git reflog 查看本地提交
-git show commitid 查看某个id提交的内容
-git revert commitid 撤回某个id提交的内容
-git cherry-pick commitid 找回某个id提交的内容
+- `git reflog` 查看本地提交
+- `git show commitid` 查看某个id提交的内容
+- `git revert commitid` 撤回某个id提交的内容
+- `git cherry-pick commitid` 找回某个id提交的内容
+
+
+## 八、自动变基和取消自动变基
+- 自动变基
+`git config --global pull.rebase true`
+`git config --global --add pull.ff true`
+- 取消自动变基
+`git config --global pull.rebase false`
+`git config --global --add pull.ff false`
