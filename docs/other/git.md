@@ -68,3 +68,13 @@ git commit -m '更新' // 重新提交
 - 取消自动变基
 `git config --global pull.rebase false`
 `git config --global --add pull.ff false`
+
+## 九、本地分支关联远程分支
+- 1. 有远程分支
+  - 本地创建一个与远程分支同名的分支：`git checkout -b 远程分支名`
+  - 关联：`git branch --set-upstream-to=origin/远程分支名`
+  - 查看关联情况：`git branch -vv`
+- 2. 没有远程分支
+  - 本地创建一个分支：`git checkout -b 分支名`
+  - 提交到远程：`git push origin 分支名`
+  - 关联远程分支：`git branch --set-upstream-to=origin/分支名`
