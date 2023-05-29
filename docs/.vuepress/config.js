@@ -110,6 +110,7 @@ module.exports = {
             ['elementui/table/combineRow', '表格合并'],
             ['elementui/table/expandRow', '表格行展开'],
             ['elementui/table/checkboxRow', '表格部分数据禁用'],
+            ['elementui/table/toggleRowSelection', '多选框勾选失效'],
           ]
         },
         {
